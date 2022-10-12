@@ -35,8 +35,11 @@ def print_set_xy_lims(ax=None, ax_name: str = "ax"):
     if ax is None:
         ax = plt.gca()
     
-    print(f"{ax_name}.set_xlim({ax.get_xlim():0.3f})")
-    print(f"{ax_name}.set_ylim({ax.get_ylim():0.3f})")
+
+    xlim = ax.get_xlim()
+    ylim = ax.get_ylim()
+    print(f"{ax_name}.set_xlim({xlim[0]:0.3f}, {xlim[1]:0.3f})")
+    print(f"{ax_name}.set_ylim({ylim[0]:0.3f}, {ylim[1]:0.3f})")
 
 
 
