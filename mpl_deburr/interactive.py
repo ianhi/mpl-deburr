@@ -1,11 +1,14 @@
-from matplotlib import pyplot as plt
 from contextlib import contextmanager
+
+from matplotlib import pyplot as plt
 
 __all__ = [
     "print_figsize",
     "print_set_xy_lims",
     "current_axes",
 ]
+
+
 def print_figsize(fig=None):
     """
     print out a figure's figsize ready to be copy pasted into a plt.figure command.
@@ -19,6 +22,7 @@ def print_figsize(fig=None):
     if fig is None:
         fig = plt.gcf()
     print(f"figsize = ({fig.get_figwidth:0.2f}, {fig.get_figheight:0.2f}")
+
 
 def print_set_xy_lims(ax=None, ax_name: str = "ax"):
     """
@@ -34,7 +38,6 @@ def print_set_xy_lims(ax=None, ax_name: str = "ax"):
     """
     if ax is None:
         ax = plt.gca()
-    
 
     xlim = ax.get_xlim()
     ylim = ax.get_ylim()
@@ -42,12 +45,10 @@ def print_set_xy_lims(ax=None, ax_name: str = "ax"):
     print(f"{ax_name}.set_ylim({ylim[0]:0.3f}, {ylim[1]:0.3f})")
 
 
-
-
 @contextmanager
 def current_axes(ax):
     """
-    Set the current 
+    Set the current
     Parameters
     ----------
     ax : matplotlib.axis.Axes
